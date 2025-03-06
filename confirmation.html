@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Order Confirmation</title>
+</head>
+<body>
+    <section class="menu">
+        <div class="nav">
+            <div class="logo"><h1>Food<b>io</b></h1></div>
+            <ul>
+                
+            </ul>
+                  </div>
+        </div>
+    </section>
+
+    <section class="grid">
+        <div class="content">
+            <div class="content-left">
+                <h1>Order Confirmation</h1>
+                <p>Thank you for your order!</p>
+                <p>Your order is submitted to the kitchen</p>
+
+                <h2>Your Order Summary</h2>
+                <ul id="order-summary"></ul>
+                <h3>Total: <span id="order-total">$0.00</span></h3>
+                <a href="menu.html" class="button5">Back</a>
+                <a href="index.html" class="button5">Home</a>
+            </div>
+            <div class="content-right">
+                <img src="images/chic.png" alt="Order Image">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Retrieve cart data from localStorage
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const cartTotal = localStorage.getItem("cartTotal") || "$ 0.00";
+
+        // Display order summary
+        const orderSummary = document.getElementById("order-summary");
+        const orderTotal = document.getElementById("order-total");
+
+        if (cartItems.length === 0) {
+            orderSummary.innerHTML = "<li>Your cart is empty.</li>";
+        } else {
+            orderSummary.innerHTML = cartItems.map(item => 
+                `<li>${item.title} - $${item.price}.00</li>`
+            ).join('');
+            orderTotal.innerText = cartTotal;
+        }
+    </script>
+</body>
+</html>

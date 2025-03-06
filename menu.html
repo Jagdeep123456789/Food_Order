@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Menu</title>
+   <link rel="stylesheet" href="addtocart.css"> <!-- Ensure this CSS file exists -->
+
+   <script src="https://kit.fontawesome.com/9af4221fac.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <p class="logo">FOOD ITEMS</p>
+        <div class="cart"><i class="fa-solid fa-cart-shopping"></i><p class="count">0</p></div>
+    </div>
+    <section class="cover">
+        <div class="cover-overlay">
+            <h1>
+                <span class="solgan"></span>
+            </h1>
+        </div>
+    </section>
+    <div class="container">
+        <!-- Products will be rendered here by JavaScript -->
+        <div id="root"></div>
+        
+        <!-- Sidebar for cart -->
+        <div class="sidebar">
+            <div class="head"><p>My Cart</p></div>
+            <div id="cartItem">Your Cart Is Empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">$ 0.00</h2>
+                <a href="index.html" class="button3">Back</a>
+                <a href="confirmation.html" class="button3" onclick="saveCartData()">Checkout</a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to your JavaScript file to handle dynamic content -->
+    <script src="addtocart.js"></script> <!-- This is important for the functionality -->
+    
+    <!-- Optional button for navigating back -->
+
+    
+</body>
+</html>
